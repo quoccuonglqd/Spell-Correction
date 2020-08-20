@@ -6,5 +6,6 @@ This code implements the spell correction for the IDCard information extraction 
 ```
 pip install python-levenshtein
 pip install pylcs
+pip install Flask
 git clone https://github.com/quoccuonglqd/Spell-Correction
 ```
