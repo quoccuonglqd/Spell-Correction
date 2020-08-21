@@ -154,6 +154,11 @@ def address_correction(input_address):
 		prefix_res = prefix_res.lower() + ',' if len(prefix_res) > 1 else ''
 
 		ret = [all_addresses[ret][j][0] for j in range(2, -1, -1)]
+		current_dis = lcs(pattern_address,' '.join(ret).upper())
+		if lcs(pattern_address,' '.join(ret[2:]).upper()) == current_dis:
+			ret = ret[2:]
+		if lcs(pattern_address,' '.join(ret[1:]).upper()) == current_dis:
+			ret = ret[1:]
 		
 		# if len(pattern_address.split()) < len((' '.join(ret)).split()):
 		# 	index = len(ret)-1
@@ -166,9 +171,3 @@ def address_correction(input_address):
 		
 		ret = prefix_res.capitalize() + ','.join(ret)
 		return ret
-
-
-
-
-
-
