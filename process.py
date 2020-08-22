@@ -104,10 +104,12 @@ def clean_raw_address(raw_address):
 	for i in range(65,91):
 		tmp = ' ' + chr(i) + ' '
 		ret = ret.replace(tmp,'')
+
 	if len(ret)>1 and ret[1] == ' ':
-		ret = ret.replace(ret[:2],'')
+		ret = ret[2:]
 	if len(ret)>1 and ret[-2] == ' ':
-		ret = ret.replace(ret[-2:],'')
+		ret = ret[:-2]
+
 	i = 1
 	while i < len(ret):
 		if ret[i] >= '0' and ret[i] <= '9' and (ret[i-1] < '0' or ret[i-1] > \
@@ -171,3 +173,5 @@ def address_correction(input_address):
 		
 		ret = prefix_res.capitalize() + ','.join(ret)
 		return ret
+
+print(address_correction('1999 khu phố ptường thọ thủ đức típ hcm1'))
