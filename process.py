@@ -173,5 +173,3 @@ def address_correction(input_address):
 		
 		ret = prefix_res.capitalize() + ','.join(ret)
 		return ret
-
-print(address_correction('1999 khu phố ptường thọ thủ đức típ hcm1'))
